@@ -1,0 +1,2241 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mohammad Hossein Davoudi — Software Developer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" href="assets/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/assets/favicon-96x96.png"
+        />
+        <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+        <link rel="manifest" href="assets/site.webmanifest" />
+        <style>
+            :root {
+                --bg: #f7f6f3;
+                --surface: #ffffff;
+                --ink: #1c1b19;
+                --ink-soft: #4a473f;
+                --muted: #8a8578;
+                --line: #dad6cc;
+                --line-strong: #c4c0b8;
+                --accent: #5b6b57;
+                --accent-soft: #e7eae4;
+                --sans:
+                    "Manrope", "Vazirmatn", -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", sans-serif;
+                --sans-fa:
+                    "Vazirmatn", "Manrope", -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", sans-serif;
+                --measure: 640px;
+                --wide: 1080px;
+            }
+
+            html[dir="rtl"] body {
+                font-family: var(--sans-fa);
+            }
+
+            html[dir="rtl"] .hero h1,
+            html[dir="rtl"] .section-head h2,
+            html[dir="rtl"] .timeline-role,
+            html[dir="rtl"] .project-name,
+            html[dir="rtl"] .edu-card h3,
+            html[dir="rtl"] .blog-title,
+            html[dir="rtl"] .contact-inner h2,
+            html[dir="rtl"] .nav-name,
+            html[dir="rtl"] .footer-name {
+                font-family: var(--sans-fa);
+                letter-spacing: 0;
+            }
+
+            html[dir="rtl"] .info-row dd {
+                text-align: left;
+            }
+
+            html[dir="rtl"] .timeline-item {
+                grid-template-columns: 1fr 150px;
+            }
+
+            html[dir="rtl"] .timeline-item > div:first-child {
+                order: 2;
+            }
+
+            html[dir="rtl"] .timeline-date {
+                order: 1;
+                text-align: left;
+            }
+
+            html[dir="rtl"] .goals-grid,
+            html[dir="rtl"] .goal-col {
+                border-left: none;
+            }
+
+            html[dir="rtl"] .goals-grid {
+                border-right: 1px solid var(--line);
+            }
+
+            html[dir="rtl"] .goal-col {
+                border-left: 1px solid var(--line);
+                border-right: none;
+            }
+
+            @media (max-width: 920px) {
+                html[dir="rtl"] .timeline-item {
+                    grid-template-columns: 1fr;
+                }
+
+                html[dir="rtl"] .goal-col {
+                    border-left: none;
+                }
+            }
+
+            /* ---------- Lang switcher ---------- */
+
+            .lang-switch {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                border: 1px solid var(--line-strong);
+                border-radius: 100px;
+                padding: 3px;
+                margin-inline-start: 20px;
+                flex-shrink: 0;
+            }
+
+            .lang-btn {
+                font-family: var(--sans);
+                font-size: 12.5px;
+                font-weight: 600;
+                border: none;
+                background: none;
+                color: var(--muted);
+                padding: 5px 12px;
+                border-radius: 100px;
+                cursor: pointer;
+                transition:
+                    background 0.15s ease,
+                    color 0.15s ease;
+            }
+
+            .lang-btn.active {
+                background: var(--ink);
+                color: var(--bg);
+            }
+
+            [data-i18n-fa] {
+                display: none;
+            }
+
+            html[dir="rtl"] [data-i18n-en] {
+                display: none;
+            }
+
+            html[dir="rtl"] [data-i18n-fa] {
+                display: revert;
+            }
+
+            html[dir="rtl"] span[data-i18n-fa],
+            html[dir="rtl"] a[data-i18n-fa],
+            html[dir="rtl"] dd[data-i18n-fa] {
+                display: inline;
+            }
+
+            html[dir="rtl"] div[data-i18n-fa] {
+                display: block;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                }
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--ink);
+                font-family: var(--sans);
+                font-size: 16px;
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            ::selection {
+                background: var(--accent-soft);
+                color: var(--ink);
+            }
+
+            a {
+                color: inherit;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-family: var(--serif);
+                font-weight: 500;
+                margin: 0;
+                letter-spacing: -0.01em;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            .container {
+                max-width: var(--wide);
+                margin: 0 auto;
+                padding: 0 32px;
+            }
+
+            .prose {
+                max-width: var(--measure);
+            }
+
+            /* ---------- Nav ---------- */
+
+            header.site-nav {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                background: rgba(247, 246, 243, 0.88);
+                backdrop-filter: blur(8px);
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-inner {
+                max-width: var(--wide);
+                margin: 0 auto;
+                padding: 18px 32px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .nav-name {
+                font-family: var(--serif);
+                font-size: 16px;
+                text-decoration: none;
+                color: var(--ink);
+                white-space: nowrap;
+                flex-shrink: 0;
+                margin-right: 24px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 24px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                font-size: 14.5px;
+                color: var(--ink-soft);
+                padding: 4px 0;
+                border-bottom: 1px solid transparent;
+                transition:
+                    border-color 0.15s ease,
+                    color 0.15s ease;
+            }
+
+            .nav-links a:hover {
+                color: var(--ink);
+                border-bottom-color: var(--accent);
+            }
+
+            .nav-toggle {
+                display: none;
+                background: none;
+                border: 1px solid var(--line-strong);
+                border-radius: 6px;
+                width: 38px;
+                height: 34px;
+                cursor: pointer;
+                color: var(--ink);
+            }
+
+            /* ---------- Sections generic ---------- */
+
+            section {
+                padding: 96px 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            section:last-of-type {
+                border-bottom: none;
+            }
+
+            .section-head {
+                display: flex;
+                align-items: baseline;
+                gap: 14px;
+                margin-bottom: 44px;
+            }
+
+            .section-label {
+                font-size: 13px;
+                color: var(--muted);
+                font-variant-numeric: tabular-nums;
+                white-space: nowrap;
+            }
+
+            .section-head h2 {
+                font-size: 28px;
+            }
+
+            /* ---------- Hero ---------- */
+
+            .hero {
+                padding: 120px 0 96px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .hero-eyebrow {
+                font-size: 14.5px;
+                color: var(--accent);
+                margin-bottom: 18px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+                line-height: 1.12;
+                max-width: 780px;
+            }
+
+            .hero-role {
+                font-family: var(--sans);
+                font-size: 17px;
+                color: var(--ink-soft);
+                margin-top: 22px;
+            }
+
+            .hero-desc {
+                margin-top: 20px;
+                font-size: 17px;
+                color: var(--ink-soft);
+                max-width: var(--measure);
+                line-height: 1.7;
+            }
+
+            .hero-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 36px;
+            }
+
+            .pill {
+                font-size: 14px;
+                text-decoration: none;
+                padding: 9px 18px;
+                border: 1px solid var(--line-strong);
+                border-radius: 100px;
+                color: var(--ink);
+                transition:
+                    border-color 0.15s ease,
+                    background 0.15s ease;
+            }
+
+            .link-icon {
+                width: 16px;
+                height: 16px;
+                flex: 0 0 auto;
+                display: inline-block;
+                vertical-align: -3px;
+                fill: currentColor;
+            }
+
+            .pill .link-icon {
+                margin-inline-end: 7px;
+            }
+
+            .contact-row-label {
+                display: inline-flex;
+                align-items: center;
+                gap: 9px;
+            }
+
+            .contact-row-label .link-icon {
+                color: var(--accent);
+            }
+
+            .footer-links a {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .footer-links .link-icon {
+                width: 15px;
+                height: 15px;
+            }
+
+            .pill:hover {
+                border-color: var(--accent);
+                background: var(--accent-soft);
+            }
+
+            .pill.primary {
+                background: var(--ink);
+                color: var(--bg);
+                border-color: var(--ink);
+            }
+
+            .pill.primary:hover {
+                background: var(--accent);
+                border-color: var(--accent);
+            }
+
+            /* ---------- About ---------- */
+
+            .about-grid {
+                display: grid;
+                grid-template-columns: 1.3fr 1fr;
+                gap: 64px;
+            }
+
+            .about-text p {
+                font-size: 16.5px;
+                color: var(--ink-soft);
+                line-height: 1.75;
+            }
+
+            .about-text p + p {
+                margin-top: 18px;
+            }
+
+            .info-list {
+                border-top: 1px solid var(--line);
+            }
+
+            .info-row {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                padding: 16px 0;
+                border-bottom: 1px solid var(--line);
+                font-size: 15px;
+            }
+
+            .info-row dt {
+                color: var(--muted);
+                flex-shrink: 0;
+            }
+
+            .info-row dd {
+                margin: 0;
+                text-align: right;
+                color: var(--ink);
+            }
+
+            /* ---------- Skills ---------- */
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+            }
+
+            .skill-group h3 {
+                font-size: 15px;
+                font-family: var(--sans);
+                font-weight: 600;
+                color: var(--ink);
+                margin-bottom: 16px;
+            }
+
+            .tag-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .tag {
+                font-size: 13.5px;
+                color: var(--ink-soft);
+                border: 1px solid var(--line-strong);
+                border-radius: 5px;
+                padding: 5px 10px;
+                background: var(--surface);
+            }
+
+            /* ---------- Interests ---------- */
+
+            .interest-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1px;
+                background: var(--line);
+                border: 1px solid var(--line);
+            }
+
+            .interest-card {
+                background: var(--surface);
+                padding: 28px;
+            }
+
+            .interest-card h3 {
+                font-family: var(--sans);
+                font-weight: 600;
+                font-size: 15.5px;
+                margin-bottom: 8px;
+            }
+
+            .interest-card p {
+                font-size: 14.5px;
+                color: var(--muted);
+                line-height: 1.6;
+            }
+
+            /* ---------- Experience (timeline) ---------- */
+
+            .timeline {
+                border-top: 1px solid var(--line);
+            }
+
+            .timeline-item {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                gap: 32px;
+                padding: 28px 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .timeline-date {
+                font-size: 14px;
+                color: var(--muted);
+                padding-top: 3px;
+            }
+
+            .timeline-role {
+                font-family: var(--serif);
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+
+            .timeline-org {
+                font-size: 14.5px;
+                color: var(--accent);
+                margin-bottom: 10px;
+            }
+
+            .timeline-desc {
+                font-size: 15px;
+                color: var(--ink-soft);
+                line-height: 1.7;
+                max-width: 560px;
+            }
+
+            /* ---------- Education ---------- */
+
+            .edu-card {
+                border-top: 1px solid var(--line);
+                padding-top: 28px;
+                max-width: var(--measure);
+            }
+
+            .edu-card h3 {
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+
+            .edu-meta {
+                font-size: 14.5px;
+                color: var(--muted);
+                margin-bottom: 16px;
+            }
+
+            .edu-note {
+                font-size: 15px;
+                color: var(--ink-soft);
+                line-height: 1.7;
+            }
+
+            /* ---------- Projects ---------- */
+
+            .project-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .project-card {
+                border: 1px solid var(--line-strong);
+                background: var(--surface);
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .project-card.featured {
+                grid-column: span 2;
+                padding: 38px;
+            }
+
+            .project-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 16px;
+                margin-bottom: 14px;
+            }
+
+            .project-name {
+                font-family: var(--serif);
+                font-size: 22px;
+            }
+
+            .project-card.featured .project-name {
+                font-size: 26px;
+            }
+
+            .project-category {
+                font-size: 12.5px;
+                color: var(--muted);
+                border: 1px solid var(--line-strong);
+                border-radius: 4px;
+                padding: 3px 8px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .project-desc {
+                font-size: 15px;
+                color: var(--ink-soft);
+                line-height: 1.7;
+                flex-grow: 1;
+            }
+
+            .project-tech {
+                font-size: 13px;
+                color: var(--muted);
+                margin-top: 18px;
+                padding-top: 14px;
+                border-top: 1px solid var(--line);
+            }
+
+            .project-link {
+                margin-top: 16px;
+                font-size: 14.5px;
+                text-decoration: none;
+                color: var(--ink);
+                border-bottom: 1px solid var(--line-strong);
+                align-self: flex-start;
+                padding-bottom: 1px;
+                transition:
+                    border-color 0.15s ease,
+                    color 0.15s ease;
+            }
+
+            .project-link:hover {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+
+            /* ---------- Goals ---------- */
+
+            .goals-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                border-top: 1px solid var(--line);
+                border-left: 1px solid var(--line);
+            }
+
+            .goal-col {
+                padding: 30px 30px 0 30px;
+                border-right: 1px solid var(--line);
+            }
+
+            .goal-col h3 {
+                font-family: var(--sans);
+                font-weight: 600;
+                font-size: 14px;
+                color: var(--accent);
+                margin-bottom: 18px;
+            }
+
+            .goal-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .goal-list li {
+                font-size: 15px;
+                color: var(--ink-soft);
+                line-height: 1.6;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .goal-list li:last-child {
+                border-bottom: none;
+            }
+
+            /* ---------- Blog ---------- */
+
+            .blog-intro {
+                font-size: 16.5px;
+                color: var(--ink-soft);
+                max-width: var(--measure);
+                margin-bottom: 48px;
+                line-height: 1.7;
+            }
+
+            .blog-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 28px;
+            }
+
+            .blog-card {
+                border-top: 1px solid var(--line-strong);
+                padding-top: 18px;
+            }
+
+            .blog-meta {
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 10px;
+            }
+
+            .blog-title {
+                font-family: var(--serif);
+                font-size: 19px;
+                line-height: 1.35;
+                margin-bottom: 10px;
+            }
+
+            .blog-excerpt {
+                font-size: 14.5px;
+                color: var(--ink-soft);
+                line-height: 1.65;
+                margin-bottom: 14px;
+            }
+
+            .blog-read {
+                font-size: 14px;
+                text-decoration: none;
+                color: var(--ink);
+                border-bottom: 1px solid var(--line-strong);
+                padding-bottom: 1px;
+            }
+
+            .blog-read:hover {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+
+            .blog-all {
+                display: inline-block;
+                margin-top: 44px;
+                font-size: 14.5px;
+                text-decoration: none;
+                color: var(--ink);
+                border-bottom: 1px solid var(--line-strong);
+                padding-bottom: 1px;
+            }
+
+            .blog-all:hover {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+
+            /* ---------- Contact ---------- */
+
+            .contact-inner {
+                max-width: var(--measure);
+            }
+
+            .contact-inner h2 {
+                font-size: 34px;
+                margin-bottom: 20px;
+            }
+
+            .contact-inner p {
+                font-size: 16.5px;
+                color: var(--ink-soft);
+                line-height: 1.7;
+                margin-bottom: 36px;
+            }
+
+            .contact-methods {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                border-top: 1px solid var(--line);
+            }
+
+            .contact-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 18px 0;
+                border-bottom: 1px solid var(--line);
+                text-decoration: none;
+                color: var(--ink);
+                font-size: 15.5px;
+                transition: color 0.15s ease;
+            }
+
+            .contact-row:hover {
+                color: var(--accent);
+            }
+
+            .contact-row span:last-child {
+                font-size: 14px;
+                color: var(--muted);
+            }
+
+            /* ---------- Footer ---------- */
+
+            footer {
+                padding: 40px 0 60px;
+            }
+
+            .footer-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .footer-name {
+                font-family: var(--serif);
+                font-size: 16px;
+            }
+
+            .footer-role {
+                font-size: 13.5px;
+                color: var(--muted);
+                margin-top: 2px;
+            }
+
+            .footer-links {
+                display: flex;
+                gap: 20px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-size: 14px;
+            }
+
+            .footer-links a {
+                text-decoration: none;
+                color: var(--ink-soft);
+            }
+
+            .footer-links a:hover {
+                color: var(--accent);
+            }
+
+            .footer-copy {
+                font-size: 13px;
+                color: var(--muted);
+            }
+
+            /* ---------- Responsive ---------- */
+
+            @media (max-width: 920px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .nav-toggle {
+                    display: block;
+                }
+
+                .container {
+                    padding: 0 20px;
+                }
+
+                .nav-inner {
+                    padding: 16px 20px;
+                }
+
+                section {
+                    padding: 64px 0;
+                }
+
+                .hero {
+                    padding: 72px 0 56px;
+                }
+
+                .hero h1 {
+                    font-size: 36px;
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+
+                .skills-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 28px;
+                }
+
+                .interest-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .timeline-item {
+                    grid-template-columns: 1fr;
+                    gap: 6px;
+                }
+
+                .project-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .project-card.featured {
+                    grid-column: span 1;
+                    padding: 28px;
+                }
+
+                .goals-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .goal-col {
+                    border-right: none;
+                    border-bottom: 1px solid var(--line);
+                    padding-bottom: 24px;
+                }
+
+                .blog-grid {
+                    grid-template-columns: 1fr;
+                    gap: 32px;
+                }
+
+                .footer-inner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+
+            /* mobile nav sheet */
+            .mobile-sheet {
+                display: none;
+                flex-direction: column;
+                border-bottom: 1px solid var(--line);
+                background: var(--bg);
+            }
+
+            .mobile-sheet.open {
+                display: flex;
+            }
+
+            .mobile-sheet a {
+                padding: 14px 20px;
+                text-decoration: none;
+                color: var(--ink-soft);
+                font-size: 15px;
+                border-top: 1px solid var(--line);
+            }
+
+            /* focus visibility */
+            a:focus-visible,
+            button:focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 2px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="site-nav">
+            <div class="nav-inner">
+                <a href="#top" class="nav-name">Mohammad Hossein Davoudi</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#about"
+                                ><span data-i18n-en>About</span
+                                ><span data-i18n-fa>درباره من</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#skills"
+                                ><span data-i18n-en>Skills</span
+                                ><span data-i18n-fa>مهارت‌ها</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#experience"
+                                ><span data-i18n-en>Experience</span
+                                ><span data-i18n-fa>سوابق</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#projects"
+                                ><span data-i18n-en>Projects</span
+                                ><span data-i18n-fa>پروژه‌ها</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#writing"
+                                ><span data-i18n-en>Writing</span
+                                ><span data-i18n-fa>نوشته‌ها</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#contact"
+                                ><span data-i18n-en>Contact</span
+                                ><span data-i18n-fa>تماس</span></a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <div
+                    class="lang-switch"
+                    role="group"
+                    aria-label="Language switch"
+                >
+                    <button
+                        class="lang-btn active"
+                        id="langEnBtn"
+                        type="button"
+                    >
+                        EN
+                    </button>
+                    <button class="lang-btn" id="langFaBtn" type="button">
+                        فا
+                    </button>
+                </div>
+                <button
+                    class="nav-toggle"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                    id="navToggle"
+                >
+                    <svg
+                        width="16"
+                        height="12"
+                        viewBox="0 0 16 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M0 1H16"
+                            stroke="currentColor"
+                            stroke-width="1.4"
+                        />
+                        <path
+                            d="M0 6H16"
+                            stroke="currentColor"
+                            stroke-width="1.4"
+                        />
+                        <path
+                            d="M0 11H16"
+                            stroke="currentColor"
+                            stroke-width="1.4"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-sheet" id="mobileSheet">
+                <a href="#about"
+                    ><span data-i18n-en>About</span
+                    ><span data-i18n-fa>درباره من</span></a
+                >
+                <a href="#skills"
+                    ><span data-i18n-en>Skills</span
+                    ><span data-i18n-fa>مهارت‌ها</span></a
+                >
+                <a href="#experience"
+                    ><span data-i18n-en>Experience</span
+                    ><span data-i18n-fa>سوابق</span></a
+                >
+                <a href="#projects"
+                    ><span data-i18n-en>Projects</span
+                    ><span data-i18n-fa>پروژه‌ها</span></a
+                >
+                <a href="#writing"
+                    ><span data-i18n-en>Writing</span
+                    ><span data-i18n-fa>نوشته‌ها</span></a
+                >
+                <a href="#contact"
+                    ><span data-i18n-en>Contact</span
+                    ><span data-i18n-fa>تماس</span></a
+                >
+            </div>
+        </header>
+
+        <main id="top">
+            <!-- HERO -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-eyebrow">
+                        <span data-i18n-en>Building & learning</span>
+                        <span data-i18n-fa>ساختن و یاد گرفتن</span>
+                    </div>
+                    <h1>
+                        <span data-i18n-en
+                            >Mohammad Hossein Davoudi — software developer,
+                            founder of NadStore.</span
+                        >
+                        <span data-i18n-fa
+                            >محمدحسین داودی — توسعه‌دهنده نرم‌افزار، بنیان‌گذار
+                            نادستور.</span
+                        >
+                    </h1>
+                    <p class="hero-role">
+                        <span data-i18n-en
+                            >Software Developer · Founder · Writer</span
+                        >
+                        <span data-i18n-fa
+                            >توسعه‌دهنده نرم‌افزار · بنیان‌گذار · نویسنده</span
+                        >
+                    </p>
+                    <p class="hero-desc">
+                        <span data-i18n-en>
+                            I'm a civil engineering student and self-directed
+                            software developer working mainly in PHP, MySQL, and
+                            JavaScript. I founded NadStore, a custom e-commerce
+                            platform now serving three active businesses, and I
+                            handle digital and IT operations for an educational
+                            institute. Outside of code, I write, and study
+                            history, philosophy, and politics.
+                        </span>
+                        <span data-i18n-fa>
+                            دانشجوی مهندسی عمران و توسعه‌دهنده نرم‌افزار
+                            خودآموخته هستم که عمدتاً با PHP، MySQL و جاوااسکریپت
+                            کار می‌کنم. نادستور را بنیان گذاشتم، یک پلتفرم
+                            فروشگاهی سفارشی که اکنون به سه کسب‌وکار فعال خدمات
+                            می‌دهد، و مسئولیت امور دیجیتال و فناوری اطلاعات یک
+                            مؤسسه آموزشی را نیز بر عهده دارم. بیرون از کدنویسی،
+                            می‌نویسم و تاریخ، فلسفه و سیاست مطالعه می‌کنم.
+                        </span>
+                    </p>
+                    <div class="hero-links">
+                        <a href="#projects" class="pill primary"
+                            ><span data-i18n-en>View projects</span
+                            ><span data-i18n-fa>مشاهده پروژه‌ها</span></a
+                        >
+                        <a href="#contact" class="pill"
+                            ><span data-i18n-en>Get in touch</span
+                            ><span data-i18n-fa>تماس با من</span></a
+                        >
+                        <a
+                            href="https://www.linkedin.com/in/mohammadhossein-davoudi-2b5287203"
+                            class="pill"
+                        >
+                            <svg
+                                class="link-icon"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8.16 18.34H5.19V9.75h2.97v8.59ZM6.67 8.58a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.16 9.76h-2.96v-4.18c0-1-.02-2.29-1.4-2.29-1.4 0-1.62 1.09-1.62 2.22v4.25H9.89V9.75h2.84v1.17h.04c.4-.74 1.36-1.52 2.8-1.52 3 0 3.56 1.97 3.56 4.53v4.41Z"
+                                />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/NahidDavoudi" class="pill">
+                            <svg
+                                class="link-icon"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.8 1.95 3.3 1.38.1-.72.4-1.21.72-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.32-2.63 5.27-5.14 5.55.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"
+                                />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="#writing" class="pill"
+                            ><span data-i18n-en>Writing</span
+                            ><span data-i18n-fa>نوشته‌ها</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">01</span>
+                        <h2>
+                            <span data-i18n-en>About me</span
+                            ><span data-i18n-fa>درباره من</span>
+                        </h2>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p>
+                                <span data-i18n-en>
+                                    I'm a civil engineering student at Babol
+                                    Noshirvani University of Technology and a
+                                    self-directed software developer, focused
+                                    mainly on PHP, MySQL, JavaScript, and web
+                                    application development. I build and ship
+                                    real software — I'm the founder and
+                                    developer of NadStore, a customizable
+                                    e-commerce codebase that's been adapted and
+                                    delivered to three customers.
+                                </span>
+                                <span data-i18n-fa>
+                                    دانشجوی مهندسی عمران در دانشگاه صنعتی
+                                    نوشیروانی بابل و توسعه‌دهنده نرم‌افزار
+                                    خودآموخته‌ام، عمدتاً متمرکز بر PHP، MySQL،
+                                    جاوااسکریپت و توسعه اپلیکیشن‌های وب. من
+                                    نرم‌افزار واقعی می‌سازم و عرضه می‌کنم —
+                                    بنیان‌گذار و توسعه‌دهنده نادستور هستم، یک
+                                    کدبیس فروشگاهی قابل‌تنظیم که برای سه مشتری
+                                    سفارشی‌سازی و تحویل داده شده است.
+                                </span>
+                            </p>
+                            <p>
+                                <span data-i18n-en>
+                                    I also work across internal operations,
+                                    digital, IT, web development, digital
+                                    marketing, and content at Famo Academy.
+                                    Beyond technology, I write, and study
+                                    history, philosophy, sociology, and politics
+                                    — I'm also working on original dramatic and
+                                    literary projects. Currently learning
+                                    German, and exploring agentic programming
+                                    and AI-assisted software engineering.
+                                </span>
+                                <span data-i18n-fa>
+                                    همچنین در فامو آکادمی در حوزه‌های عملیات
+                                    داخلی، دیجیتال، فناوری اطلاعات، توسعه وب،
+                                    بازاریابی دیجیتال و تولید محتوا فعالیت
+                                    می‌کنم. فراتر از فناوری، می‌نویسم و تاریخ،
+                                    فلسفه، جامعه‌شناسی و سیاست مطالعه می‌کنم —
+                                    همچنین روی پروژه‌های نمایشی و ادبی اصیل کار
+                                    می‌کنم. در حال حاضر آلمانی یاد می‌گیرم و
+                                    برنامه‌نویسی عامل‌محور و مهندسی نرم‌افزار
+                                    مبتنی بر هوش مصنوعی را دنبال می‌کنم.
+                                </span>
+                            </p>
+                        </div>
+                        <dl class="info-list">
+                            <div class="info-row">
+                                <dt>
+                                    <span data-i18n-en>Location</span
+                                    ><span data-i18n-fa>موقعیت</span>
+                                </dt>
+                                <dd>
+                                    <span data-i18n-en
+                                        >Babol, Mazandaran Province, Iran</span
+                                    ><span data-i18n-fa
+                                        >بابل، استان مازندران، ایران</span
+                                    >
+                                </dd>
+                            </div>
+                            <div class="info-row">
+                                <dt>
+                                    <span data-i18n-en>Role</span
+                                    ><span data-i18n-fa>سمت</span>
+                                </dt>
+                                <dd>
+                                    <span data-i18n-en
+                                        >Digital & IT Manager · Founder</span
+                                    ><span data-i18n-fa
+                                        >مدیر دیجیتال و فناوری اطلاعات ·
+                                        بنیان‌گذار</span
+                                    >
+                                </dd>
+                            </div>
+                            <div class="info-row">
+                                <dt>
+                                    <span data-i18n-en>Education</span
+                                    ><span data-i18n-fa>تحصیلات</span>
+                                </dt>
+                                <dd>
+                                    <span data-i18n-en
+                                        >Civil Engineering Student</span
+                                    ><span data-i18n-fa
+                                        >دانشجوی مهندسی عمران</span
+                                    >
+                                </dd>
+                            </div>
+                            <div class="info-row">
+                                <dt>
+                                    <span data-i18n-en>Focus</span
+                                    ><span data-i18n-fa>تمرکز</span>
+                                </dt>
+                                <dd>
+                                    <span data-i18n-en
+                                        >E-commerce systems · Backend</span
+                                    ><span data-i18n-fa
+                                        >سیستم‌های فروشگاهی · بک‌اند</span
+                                    >
+                                </dd>
+                            </div>
+                            <div class="info-row">
+                                <dt>
+                                    <span data-i18n-en>Languages</span
+                                    ><span data-i18n-fa>زبان‌ها</span>
+                                </dt>
+                                <dd>
+                                    <span data-i18n-en
+                                        >Persian · English · German ·
+                                        French</span
+                                    ><span data-i18n-fa
+                                        >فارسی · انگلیسی · آلمانی · فرانسه</span
+                                    >
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">02</span>
+                        <h2>
+                            <span data-i18n-en>Skills</span
+                            ><span data-i18n-fa>مهارت‌ها</span>
+                        </h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h3>
+                                <span data-i18n-en>Development</span
+                                ><span data-i18n-fa>توسعه</span>
+                            </h3>
+                            <div class="tag-list">
+                                <span class="tag">PHP</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS / Tailwind</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3>
+                                <span data-i18n-en>Backend & Data</span
+                                ><span data-i18n-fa>بک‌اند و داده</span>
+                            </h3>
+                            <div class="tag-list">
+                                <span class="tag">MySQL</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">REST APIs</span>
+                                <span class="tag">Custom MVC design</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3>
+                                <span data-i18n-en>Tools & Practice</span
+                                ><span data-i18n-fa>ابزارها و رویه‌ها</span>
+                            </h3>
+                            <div class="tag-list">
+                                <span class="tag">Git</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Cloudflare</span>
+                                <span class="tag">DevOps</span>
+                                <span class="tag">AI-assisted development</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3>
+                                <span data-i18n-en>Product & Ops</span
+                                ><span data-i18n-fa>محصول و عملیات</span>
+                            </h3>
+                            <div class="tag-list">
+                                <span class="tag">E-Commerce</span>
+                                <span class="tag">Web Design</span>
+                                <span class="tag">Digital Strategy</span>
+                                <span class="tag">Client delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERESTS -->
+            <section id="interests">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">03</span>
+                        <h2>
+                            <span data-i18n-en>Interests</span
+                            ><span data-i18n-fa>علایق</span>
+                        </h2>
+                    </div>
+                    <div class="interest-grid">
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Software architecture</span
+                                ><span data-i18n-fa>معماری نرم‌افزار</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >Why systems are built the way they are, and
+                                    what changes when you build one
+                                    yourself.</span
+                                >
+                                <span data-i18n-fa
+                                    >اینکه چرا سیستم‌ها به این شکل ساخته
+                                    می‌شوند، و وقتی خودت یکی می‌سازی چه چیزی
+                                    تغییر می‌کند.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Artificial intelligence</span
+                                ><span data-i18n-fa>هوش مصنوعی</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >Using AI as a working tool in real
+                                    development, not just as a talking
+                                    point.</span
+                                >
+                                <span data-i18n-fa
+                                    >استفاده از هوش مصنوعی به‌عنوان ابزاری کاری
+                                    در توسعه واقعی، نه صرفاً موضوعی برای
+                                    گفتگو.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Entrepreneurship</span
+                                ><span data-i18n-fa>کارآفرینی</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >Turning a small, specific idea into
+                                    something that survives contact with real
+                                    customers.</span
+                                >
+                                <span data-i18n-fa
+                                    >تبدیل یک ایده کوچک و مشخص به چیزی که در
+                                    مواجهه با مشتریان واقعی دوام می‌آورد.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Economics</span
+                                ><span data-i18n-fa>اقتصاد</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >How markets and incentives shape the
+                                    products people end up building.</span
+                                >
+                                <span data-i18n-fa
+                                    >اینکه بازارها و انگیزه‌ها چگونه محصولاتی را
+                                    که مردم در نهایت می‌سازند شکل می‌دهند.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Writing & theatre</span
+                                ><span data-i18n-fa>نویسندگی و تئاتر</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >Longer-form writing and playwriting, as a
+                                    separate but related kind of
+                                    structure-building.</span
+                                >
+                                <span data-i18n-fa
+                                    >نوشتن بلندتر و نمایش‌نامه‌نویسی، به‌عنوان
+                                    نوع دیگری از ساختن ساختار که جدا اما مرتبط
+                                    است.</span
+                                >
+                            </p>
+                        </div>
+                        <div class="interest-card">
+                            <h3>
+                                <span data-i18n-en>Languages</span
+                                ><span data-i18n-fa>زبان‌ها</span>
+                            </h3>
+                            <p>
+                                <span data-i18n-en
+                                    >Currently expanding beyond Persian and
+                                    English.</span
+                                >
+                                <span data-i18n-fa
+                                    >در حال حاضر در حال گسترش فراتر از فارسی و
+                                    انگلیسی هستم.</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section id="experience">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">04</span>
+                        <h2>
+                            <span data-i18n-en>Experience</span
+                            ><span data-i18n-fa>سوابق</span>
+                        </h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span data-i18n-en>Mar 2026 — Present</span>
+                                <span data-i18n-fa>اسفند ۱۴۰۴ — اکنون</span>
+                            </div>
+                            <div>
+                                <div class="timeline-role">
+                                    <span data-i18n-en
+                                        >Founder & Full-Stack Developer</span
+                                    >
+                                    <span data-i18n-fa
+                                        >بنیان‌گذار و توسعه‌دهنده فول‌استک</span
+                                    >
+                                </div>
+                                <div class="timeline-org">NadStore</div>
+                                <div class="timeline-desc">
+                                    <span data-i18n-en>
+                                        Founded and built a custom e-commerce
+                                        platform for small and medium-sized
+                                        businesses, now serving 3 active
+                                        customers. Designed the backend in pure
+                                        PHP with a custom MVC architecture —
+                                        auth, business logic, inventory, and
+                                        order processing — and the frontend in
+                                        vanilla JS, HTML, CSS, and Tailwind.
+                                        Handled payment gateway integration,
+                                        e-Namad setup, deployment, hosting, DNS,
+                                        and SSL, plus ongoing client support.
+                                    </span>
+                                    <span data-i18n-fa>
+                                        یک پلتفرم فروشگاهی سفارشی برای
+                                        کسب‌وکارهای کوچک و متوسط بنیان گذاشتم و
+                                        ساختم که اکنون به ۳ مشتری فعال خدمات
+                                        می‌دهد. بک‌اند را با PHP خالص و معماری
+                                        سفارشی MVC — احراز هویت، منطق کسب‌وکار،
+                                        موجودی و پردازش سفارش — و فرانت‌اند را
+                                        با جاوااسکریپت خالص، HTML، CSS و
+                                        Tailwind طراحی کردم. یکپارچه‌سازی درگاه
+                                        پرداخت، راه‌اندازی اینماد، استقرار،
+                                        هاستینگ، DNS و SSL، و پشتیبانی مداوم
+                                        مشتریان را نیز بر عهده دارم.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span data-i18n-en>Jun 2025 — Present</span>
+                                <span data-i18n-fa>خرداد ۱۴۰۴ — اکنون</span>
+                            </div>
+                            <div>
+                                <div class="timeline-role">
+                                    <span data-i18n-en
+                                        >Digital & IT Manager, Internal
+                                        Operations</span
+                                    >
+                                    <span data-i18n-fa
+                                        >مدیر دیجیتال و فناوری اطلاعات، عملیات
+                                        داخلی</span
+                                    >
+                                </div>
+                                <div class="timeline-org">Famo Academy</div>
+                                <div class="timeline-desc">
+                                    <span data-i18n-en>
+                                        Manage and develop the institute's
+                                        digital infrastructure, online presence,
+                                        content operations, and selected
+                                        internal processes — including building
+                                        and maintaining the official website,
+                                        day-to-day IT support, digital branding,
+                                        and student and class-related
+                                        operations.
+                                    </span>
+                                    <span data-i18n-fa>
+                                        زیرساخت دیجیتال، حضور آنلاین، عملیات
+                                        محتوایی و برخی فرآیندهای داخلی مؤسسه را
+                                        مدیریت و توسعه می‌دهم — از جمله ساخت و
+                                        نگهداری وب‌سایت رسمی، پشتیبانی روزانه
+                                        فناوری اطلاعات، برندسازی دیجیتال، و
+                                        عملیات مربوط به دانش‌آموزان و کلاس‌ها.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section id="education">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">05</span>
+                        <h2>
+                            <span data-i18n-en>Education</span
+                            ><span data-i18n-fa>تحصیلات</span>
+                        </h2>
+                    </div>
+                    <div class="edu-card">
+                        <h3>
+                            <span data-i18n-en>Civil Engineering</span
+                            ><span data-i18n-fa>مهندسی عمران</span>
+                        </h3>
+                        <div class="edu-meta">
+                            <span data-i18n-en
+                                >Babol Noshirvani University of Technology · In
+                                progress</span
+                            >
+                            <span data-i18n-fa
+                                >دانشگاه صنعتی نوشیروانی بابل · در حال
+                                تحصیل</span
+                            >
+                        </div>
+                        <p class="edu-note">
+                            <span data-i18n-en>
+                                Studying civil engineering while building
+                                software independently outside of coursework —
+                                most of my technical foundation in programming,
+                                databases, and systems design is self-taught.
+                            </span>
+                            <span data-i18n-fa>
+                                هم‌زمان با تحصیل در مهندسی عمران، به‌طور مستقل و
+                                خارج از دروس دانشگاهی نرم‌افزار می‌سازم — بیشتر
+                                پایه فنی من در برنامه‌نویسی، پایگاه‌داده و طراحی
+                                سیستم‌ها خودآموخته است.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">06</span>
+                        <h2>
+                            <span data-i18n-en>Projects</span
+                            ><span data-i18n-fa>پروژه‌ها</span>
+                        </h2>
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-card featured">
+                            <div class="project-top">
+                                <div class="project-name">NadStore</div>
+                                <div class="project-category">
+                                    <span data-i18n-en>Product</span
+                                    ><span data-i18n-fa>محصول</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                <span data-i18n-en>
+                                    A custom e-commerce platform for small and
+                                    medium-sized businesses, currently serving 3
+                                    active customers. Built from the ground up —
+                                    custom PHP MVC backend, vanilla JS frontend,
+                                    RESTful APIs, payment gateway integration,
+                                    and full production infrastructure including
+                                    deployment, DNS, and SSL.
+                                </span>
+                                <span data-i18n-fa>
+                                    یک پلتفرم فروشگاهی سفارشی برای کسب‌وکارهای
+                                    کوچک و متوسط، که در حال حاضر به ۳ مشتری فعال
+                                    خدمات می‌دهد. از صفر ساخته شده — بک‌اند
+                                    سفارشی PHP با معماری MVC، فرانت‌اند
+                                    جاوااسکریپت خالص، APIهای RESTful،
+                                    یکپارچه‌سازی درگاه پرداخت، و زیرساخت کامل
+                                    تولید شامل استقرار، DNS و SSL.
+                                </span>
+                            </p>
+                            <div class="project-tech">
+                                PHP · MySQL · JavaScript · Tailwind CSS · REST
+                                API · Git · Cloudflare
+                            </div>
+                            <a href="https://shopiris.ir" class="project-link"
+                                ><span data-i18n-en>View project</span
+                                ><span data-i18n-fa>مشاهده پروژه</span></a
+                            >
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-top">
+                                <div class="project-name">Ghulbazar</div>
+                                <div class="project-category">
+                                    <span data-i18n-en>Client</span
+                                    ><span data-i18n-fa>مشتری</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                <span data-i18n-en>
+                                    An antique and one-of-a-kind jewelry
+                                    storefront, built end to end — database
+                                    schema, modular PHP backend, and a vanilla
+                                    JS single-page frontend with an admin panel.
+                                </span>
+                                <span data-i18n-fa>
+                                    یک فروشگاه آنلاین جواهرات عتیقه و کمیاب،
+                                    ساخته‌شده به‌صورت کامل — طراحی پایگاه‌داده،
+                                    بک‌اند ماژولار PHP، و فرانت‌اند تک‌صفحه‌ای
+                                    جاوااسکریپت خالص همراه با پنل مدیریت.
+                                </span>
+                            </p>
+                            <div class="project-tech">
+                                PHP · MySQL · Vanilla JS
+                            </div>
+                            <a href="http://ghulbazar.ir" class="project-link"
+                                ><span data-i18n-en>View project</span
+                                ><span data-i18n-fa>مشاهده پروژه</span></a
+                            >
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-top">
+                                <div class="project-name">Famo</div>
+                                <div class="project-category">
+                                    <span data-i18n-en>Client</span
+                                    ><span data-i18n-fa>مشتری</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                <span data-i18n-en>
+                                    An institute management system covering
+                                    scheduling, exam tracking, and role-based
+                                    panels for students, teachers, and staff —
+                                    currently being rebuilt on a cleaner
+                                    architecture.
+                                </span>
+                                <span data-i18n-fa>
+                                    سیستم مدیریت مؤسسه شامل زمان‌بندی، پیگیری
+                                    آزمون، و پنل‌های مبتنی بر نقش برای
+                                    دانش‌آموزان، معلمان و کارکنان — که در حال
+                                    حاضر با معماری تمیزتری بازسازی می‌شود.
+                                </span>
+                            </p>
+                            <div class="project-tech">PHP · JS · MySQL</div>
+                            <a
+                                href="https://famoacademy.ir"
+                                class="project-link"
+                                ><span data-i18n-en>View project</span
+                                ><span data-i18n-fa>مشاهده پروژه</span></a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GOALS -->
+            <section id="goals">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">07</span>
+                        <h2>
+                            <span data-i18n-en>Where I'm going</span
+                            ><span data-i18n-fa>مسیر پیش‌رو</span>
+                        </h2>
+                    </div>
+                    <div class="goals-grid">
+                        <div class="goal-col">
+                            <h3>
+                                <span data-i18n-en>Now</span
+                                ><span data-i18n-fa>اکنون</span>
+                            </h3>
+                            <ul class="goal-list">
+                                <li>
+                                    <span data-i18n-en
+                                        >Simplify and stabilize NadCore for
+                                        production client use.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >ساده‌سازی و پایدارسازی NadCore برای
+                                        استفاده تولیدی مشتریان.</span
+                                    >
+                                </li>
+                                <li>
+                                    <span data-i18n-en
+                                        >Move more of the stack toward
+                                        TypeScript and PostgreSQL.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >حرکت بیشتر استک به سمت TypeScript و
+                                        PostgreSQL.</span
+                                    >
+                                </li>
+                                <li>
+                                    <span data-i18n-en
+                                        >Ship real products, not just
+                                        prototypes.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >عرضه محصولات واقعی، نه فقط
+                                        پروتوتایپ.</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="goal-col">
+                            <h3>
+                                <span data-i18n-en>Next</span
+                                ><span data-i18n-fa>گام بعدی</span>
+                            </h3>
+                            <ul class="goal-list">
+                                <li>
+                                    <span data-i18n-en
+                                        >Take on larger, more technically
+                                        demanding client work.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >پذیرفتن پروژه‌های مشتری بزرگ‌تر و از
+                                        نظر فنی چالش‌برانگیزتر.</span
+                                    >
+                                </li>
+                                <li>
+                                    <span data-i18n-en
+                                        >Build a product with a real, paying
+                                        user base.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >ساخت محصولی با کاربران واقعی و
+                                        پرداخت‌کننده.</span
+                                    >
+                                </li>
+                                <li>
+                                    <span data-i18n-en
+                                        >Strengthen backend and infrastructure
+                                        skills.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >تقویت مهارت‌های بک‌اند و زیرساخت.</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="goal-col">
+                            <h3>
+                                <span data-i18n-en>Long term</span
+                                ><span data-i18n-fa>بلندمدت</span>
+                            </h3>
+                            <ul class="goal-list">
+                                <li>
+                                    <span data-i18n-en
+                                        >Combine software, economics, and
+                                        product thinking into independent
+                                        work.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >ترکیب نرم‌افزار، اقتصاد و تفکر محصول در
+                                        کاری مستقل.</span
+                                    >
+                                </li>
+                                <li>
+                                    <span data-i18n-en
+                                        >Build systems that are genuinely useful
+                                        to the people who run them.</span
+                                    >
+                                    <span data-i18n-fa
+                                        >ساخت سیستم‌هایی که واقعاً برای افرادی
+                                        که آن‌ها را اداره می‌کنند مفیدند.</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WRITING -->
+            <section id="writing">
+                <div class="container">
+                    <div class="section-head">
+                        <span class="section-label">08</span>
+                        <h2>
+                            <span data-i18n-en>Writing</span
+                            ><span data-i18n-fa>نوشته‌ها</span>
+                        </h2>
+                    </div>
+                    <p class="blog-intro">
+                        <span data-i18n-en
+                            >I write about economics, political philosophy, and
+                            social issues — mostly in Persian, occasionally in
+                            English.</span
+                        >
+                        <span data-i18n-fa
+                            >درباره اقتصاد، فلسفه سیاسی و مسائل اجتماعی می‌نویسم
+                            — بیشتر به فارسی، گاهی به انگلیسی.</span
+                        >
+                    </p>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-meta">
+                                <span data-i18n-en>Economics</span
+                                ><span data-i18n-fa>اقتصاد</span>
+                            </div>
+                            <div class="blog-title">
+                                <span data-i18n-en
+                                    >A Structural Analysis of Wealth Taxation in
+                                    Iran: Balancing Investment and Public
+                                    Welfare</span
+                                >
+                                <span data-i18n-fa
+                                    >تحلیل ساختاری نظام مالیات بر ثروت در ایران:
+                                    تعادل سرمایه‌گذاری و رفاه عمومی</span
+                                >
+                            </div>
+                            <p class="blog-excerpt">
+                                <span data-i18n-en
+                                    >A theoretical and comparative look at
+                                    wealth taxation in Iran's economy, examining
+                                    its legal, economic, and social dimensions
+                                    and proposing practical strategies for a
+                                    fairer, more effective system.</span
+                                >
+                                <span data-i18n-fa
+                                    >نگاهی نظری-تطبیقی به نظام مالیات بر ثروت در
+                                    اقتصاد ایران، بررسی ابعاد حقوقی، اقتصادی و
+                                    اجتماعی آن، و ارائه راهبردهایی عملی برای
+                                    عدالت و کارآمدی بیشتر.</span
+                                >
+                            </p>
+                            <a
+                                href="https://erisword.blogspot.com/2025/09/blog-post.html"
+                                class="blog-read"
+                                ><span data-i18n-en>Read article</span
+                                ><span data-i18n-fa>مطالعه مقاله</span></a
+                            >
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-meta">
+                                <span data-i18n-en>Society · Psychology</span
+                                ><span data-i18n-fa>جامعه · روان‌شناسی</span>
+                            </div>
+                            <div class="blog-title">
+                                <span data-i18n-en
+                                    >Systemic Anxiety: How Inflation Erodes
+                                    Mental Health and Social Cohesion</span
+                                >
+                                <span data-i18n-fa
+                                    >اضطراب سیستماتیک: تحلیلی بر تأثیر فرساینده
+                                    تورم بر سلامت روان و انسجام اجتماعی</span
+                                >
+                            </div>
+                            <p class="blog-excerpt">
+                                <span data-i18n-en
+                                    >An argument that chronic inflation is not
+                                    just an economic variable but a powerful
+                                    psychosocial driver — eroding trust and
+                                    social capital, normalizing maladaptive
+                                    behavior, and straining family life.</span
+                                >
+                                <span data-i18n-fa
+                                    >استدلال بر اینکه تورم مزمن نه فقط یک متغیر
+                                    اقتصادی، بلکه یک محرک روانی-اجتماعی قدرتمند
+                                    است که اعتماد و سرمایه اجتماعی را فرسایش
+                                    می‌دهد، رفتارهای ناسازگارانه را عادی می‌سازد
+                                    و به نهاد خانواده تنش وارد می‌کند.</span
+                                >
+                            </p>
+                            <a
+                                href="https://erisword.blogspot.com/2025/09/blog-post_22.html"
+                                class="blog-read"
+                                ><span data-i18n-en>Read article</span
+                                ><span data-i18n-fa>مطالعه مقاله</span></a
+                            >
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-meta">
+                                <span data-i18n-en>Political philosophy</span
+                                ><span data-i18n-fa>فلسفه سیاسی</span>
+                            </div>
+                            <div class="blog-title">
+                                Freedom and Justice: Interdependent Pillars of a
+                                Just Society
+                            </div>
+                            <p class="blog-excerpt">
+                                <span data-i18n-en
+                                    >Drawing on Locke, Rawls, Marx, and Isaiah
+                                    Berlin, this piece argues that freedom and
+                                    justice are not opposed but interdependent,
+                                    each reinforcing the other in a just
+                                    society.</span
+                                >
+                                <span data-i18n-fa
+                                    >با تکیه بر آرای لاک، رالز، مارکس و آیزایا
+                                    برلین، استدلال می‌شود که آزادی و عدالت نه در
+                                    تضاد بلکه در تعامل با یکدیگرند و هر یک دیگری
+                                    را در یک جامعه عادلانه تقویت می‌کند.</span
+                                >
+                            </p>
+                            <a
+                                href="https://eriswordenglish.blogspot.com/2025/01/freedom-and-justice-interdependent.html"
+                                class="blog-read"
+                                ><span data-i18n-en>Read article</span
+                                ><span data-i18n-fa>مطالعه مقاله</span></a
+                            >
+                        </div>
+                    </div>
+                    <a href="#" class="blog-all"
+                        ><span data-i18n-en>View all articles</span
+                        ><span data-i18n-fa>مشاهده همه مقالات</span></a
+                    >
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <div class="container">
+                    <div class="contact-inner">
+                        <h2>
+                            <span data-i18n-en>Let's connect.</span
+                            ><span data-i18n-fa>بیایید در ارتباط باشیم.</span>
+                        </h2>
+                        <p>
+                            <span data-i18n-en>
+                                If you want to talk about software, products, or
+                                a project you're building — or just exchange
+                                ideas — feel free to reach out.
+                            </span>
+                            <span data-i18n-fa>
+                                اگر می‌خواهید درباره نرم‌افزار، محصول یا
+                                پروژه‌ای که می‌سازید صحبت کنید — یا فقط تبادل
+                                ایده داشته باشید — با من در تماس باشید.
+                            </span>
+                        </p>
+                        <div class="contact-methods">
+                            <a
+                                href="mailto:sir.davoudi@gmail.com"
+                                class="contact-row"
+                            >
+                                <span class="contact-row-label"
+                                    ><svg
+                                        class="link-icon"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm9 8.2L3.6 6H3v.8l9 6.3 9-6.3V6h-.6L12 12.2Z"
+                                        /></svg
+                                    ><span data-i18n-en>Email</span
+                                    ><span data-i18n-fa>ایمیل</span></span
+                                >
+                                <span>sir.davoudi@gmail.com</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/mohammadhossein-davoudi-2b5287203"
+                                class="contact-row"
+                            >
+                                <span class="contact-row-label"
+                                    ><svg
+                                        class="link-icon"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8.16 18.34H5.19V9.75h2.97v8.59ZM6.67 8.58a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.16 9.76h-2.96v-4.18c0-1-.02-2.29-1.4-2.29-1.4 0-1.62 1.09-1.62 2.22v4.25H9.89V9.75h2.84v1.17h.04c.4-.74 1.36-1.52 2.8-1.52 3 0 3.56 1.97 3.56 4.53v4.41Z"
+                                        /></svg
+                                    >LinkedIn</span
+                                >
+                                <span>mohammadhossein-davoudi</span>
+                            </a>
+                            <a
+                                href="https://github.com/NahidDavoudi"
+                                class="contact-row"
+                            >
+                                <span class="contact-row-label"
+                                    ><svg
+                                        class="link-icon"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.8 1.95 3.3 1.38.1-.72.4-1.21.72-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.32-2.63 5.27-5.14 5.55.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"
+                                        /></svg
+                                    >GitHub</span
+                                >
+                                <span>NahidDavoudi</span>
+                            </a>
+                            <a href="tel:+989965124781" class="contact-row">
+                                <span class="contact-row-label"
+                                    ><svg
+                                        class="link-icon"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.19 2.45.56 3.57a1 1 0 0 1-.25 1.02l-2.19 2.2Z"
+                                        /></svg
+                                    ><span data-i18n-en>Phone</span
+                                    ><span data-i18n-fa>تلفن</span></span
+                                >
+                                <span>+98 996 512 4781</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                    <div>
+                        <div class="footer-name">Mohammad Hossein Davoudi</div>
+                        <div class="footer-role">
+                            <span data-i18n-en
+                                >Software Developer · Founder</span
+                            >
+                            <span data-i18n-fa
+                                >توسعه‌دهنده نرم‌افزار · بنیان‌گذار</span
+                            >
+                        </div>
+                    </div>
+                    <ul class="footer-links">
+                        <li>
+                            <a
+                                href="https://www.linkedin.com/in/mohammadhossein-davoudi-2b5287203"
+                                ><svg
+                                    class="link-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8.16 18.34H5.19V9.75h2.97v8.59ZM6.67 8.58a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.16 9.76h-2.96v-4.18c0-1-.02-2.29-1.4-2.29-1.4 0-1.62 1.09-1.62 2.22v4.25H9.89V9.75h2.84v1.17h.04c.4-.74 1.36-1.52 2.8-1.52 3 0 3.56 1.97 3.56 4.53v4.41Z"
+                                    /></svg
+                                >LinkedIn</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://github.com/NahidDavoudi"
+                                ><svg
+                                    class="link-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.8 1.95 3.3 1.38.1-.72.4-1.21.72-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.32-2.63 5.27-5.14 5.55.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"
+                                    /></svg
+                                >GitHub</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#writing"
+                                ><span data-i18n-en>Blog</span
+                                ><span data-i18n-fa>وبلاگ</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="mailto:sir.davoudi@gmail.com"
+                                ><svg
+                                    class="link-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm9 8.2L3.6 6H3v.8l9 6.3 9-6.3V6h-.6L12 12.2Z"
+                                    /></svg
+                                ><span data-i18n-en>Email</span
+                                ><span data-i18n-fa>ایمیل</span></a
+                            >
+                        </li>
+                    </ul>
+                    <div class="footer-copy">
+                        <span data-i18n-en
+                            >© 2026 Mohammad Hossein Davoudi</span
+                        >
+                        <span data-i18n-fa>© ۲۰۲۶ محمدحسین داودی</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const navToggle = document.getElementById("navToggle");
+            const mobileSheet = document.getElementById("mobileSheet");
+
+            navToggle.addEventListener("click", () => {
+                const isOpen = mobileSheet.classList.toggle("open");
+                navToggle.setAttribute("aria-expanded", isOpen);
+            });
+
+            mobileSheet.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileSheet.classList.remove("open");
+                    navToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            // ---------- Language switch ----------
+            const htmlEl = document.documentElement;
+            const langEnBtn = document.getElementById("langEnBtn");
+            const langFaBtn = document.getElementById("langFaBtn");
+
+            function setLang(lang) {
+                if (lang === "fa") {
+                    htmlEl.setAttribute("dir", "rtl");
+                    htmlEl.setAttribute("lang", "fa");
+                    langFaBtn.classList.add("active");
+                    langEnBtn.classList.remove("active");
+                } else {
+                    htmlEl.setAttribute("dir", "ltr");
+                    htmlEl.setAttribute("lang", "en");
+                    langEnBtn.classList.add("active");
+                    langFaBtn.classList.remove("active");
+                }
+                try {
+                    localStorage.setItem("site-lang", lang);
+                } catch (e) {
+                    /* ignore */
+                }
+            }
+
+            langEnBtn.addEventListener("click", () => setLang("en"));
+            langFaBtn.addEventListener("click", () => setLang("fa"));
+
+            (function initLang() {
+                let saved = null;
+                try {
+                    saved = localStorage.getItem("site-lang");
+                } catch (e) {
+                    /* ignore */
+                }
+                if (saved === "fa" || saved === "en") {
+                    setLang(saved);
+                } else if (
+                    (navigator.language || "").toLowerCase().startsWith("fa")
+                ) {
+                    setLang("fa");
+                }
+            })();
+        </script>
+    </body>
+</html>
